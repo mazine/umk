@@ -313,6 +313,14 @@ $!  Action Map
 $?  Key handler
 
 #L216 W1
+Для того что бы вызвать интеншен требуется 
+$! нажать комбинацию клавиш Alt + Enter
+$? нажать комбинацию клавиш Ctrl + Space
+$! нажать на изображение лампочки
+$? нажать на соотвествующий узел
+
+
+#L217 W1
 Выделение находится внутри позиции, которая позволяет подстановку концепта A. 
 Какие подконцепты A не будут включены в меню автодополнениея:
 $?  концепты, для которых не определен редактор
@@ -447,6 +455,13 @@ $!  для коллекций дочерних узлов
 $?  для коллекций ссылок
 $?  для коллекций свойств
 
+#L413 W1
+Выражение coerce используется для 
+$! приведения типа к типу с заданной структурой 
+$? получения типа выражения
+$? проверки типа выражения
+
+
 #L501 W1
 Для интеграции со средой разработки используетя язык:
 $?  язык редактора
@@ -454,5 +469,78 @@ $!  язык плагинов
 $?  язык интеншенов
 $?  язык структуры
 
- 
+#L502 W1
+Укажите верную программу для выражения int a = f.executeMethod(p);
+$? read f
+   write a
+   read p
+
+$? write a
+   read f
+   read p
+
+$! read p
+   read f
+   write a
+
+#L503 W1
+Укажите верную программу для выражения if (condition) {body}
+$! code for condition 
+    ifjump after end
+    code for body
+    label end 
+
+$? code for condition
+    ifjump after end
+    code for body
+    jump before condition
+    label end 
+
+$? code for body
+    code for condition
+    ifjump before body
+
+#L504 W1
+Укажите верную программу для выражения while (condition) {body}
+$? code for condition 
+    ifjump after end
+    code for body
+    label end 
+
+$! code for condition
+    ifjump after end
+    code for body
+    jump before condition
+    label end 
+
+$? code for body
+    code for condition
+    ifjump before body
+
+
+#L505 W1
+Укажите верную программу для выражения do {body} while (condition)
+$? code for condition 
+    ifjump after end
+    code for body
+    label end 
+
+$? code for condition
+    ifjump after end
+    code for body
+    jump before condition
+    label end 
+
+$! code for body
+    code for condition
+    ifjump before body
+
+
+#L506 W1
+Сейчас комбинации клавиш для действия A работают в тех местах, где 
+$! A доступен из всплывающего меню
+$? A находится в импортированной модели
+$? A указан в какой-либо группе
+
+
 
